@@ -40,6 +40,34 @@ CameraClass::changeResolution(const Resolution& resolution, int sleepFor)
 }
 
 bool
+setFormatJpeg(int sleepFor = 500)
+{
+  sensor_t* sensor = esp_camera_sensor_get();
+  if (sensor == nullptr) {
+    return false;
+  }
+  if (sensor->set_pixformat(sensor, PIXFORMAT_JPEG) != 0) {
+    return false;
+  }
+  delay(sleepFor);
+  return true;
+}
+
+bool
+setFormatGrayscale(int sleepFor = 500)
+{
+  sensor_t* sensor = esp_camera_sensor_get();
+  if (sensor == nullptr) {
+    return false;
+  }
+  if (sensor->set_pixformat(sensor, PIXFORMAT_GRAYSCALE) != 0) {
+    return false;
+  }
+  delay(sleepFor);
+  return true;
+}
+
+bool
 CameraClass::setAutoGain(bool enabled, int sleepFor)
 {
   sensor_t* sensor = esp_camera_sensor_get();
@@ -52,6 +80,7 @@ CameraClass::setAutoGain(bool enabled, int sleepFor)
   delay(sleepFor);
   return true;
 }
+
 bool
 CameraClass::setAutoExposure(bool enabled, int sleepFor)
 {
@@ -65,6 +94,7 @@ CameraClass::setAutoExposure(bool enabled, int sleepFor)
   delay(sleepFor);
   return true;
 }
+
 bool
 CameraClass::setGain(int gain, int sleepFor)
 {

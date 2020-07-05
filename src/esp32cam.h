@@ -25,7 +25,8 @@ public:
    *  \param sleepFor how long to wait for stabilization (millis)
    */
   bool changeResolution(const Resolution& resolution, int sleepFor = 500);
-
+  bool setFormatJpeg(int sleepFor=500);
+  bool setFormatGrayscale(int sleepFor=500);
   bool setAutoGain(bool enabled, int sleepFor = 500);
   bool setAutoExposure(bool enabled, int sleepFor = 500);
   bool setGain(int gain, int sleepFor = 500);    //  (0 - 30)
