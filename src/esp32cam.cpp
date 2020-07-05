@@ -126,7 +126,7 @@ CameraClass::setGainCeiling(int ceiling, int sleepFor)
   if (sensor == nullptr) {
     return false;
   }
-  int ceil = 0;
+  gainceiling_t ceil;
   switch (ceiling) {
     case 2:
       ceil = GAINCEILING_2X;
