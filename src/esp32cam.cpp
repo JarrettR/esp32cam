@@ -40,7 +40,7 @@ CameraClass::changeResolution(const Resolution& resolution, int sleepFor)
 }
 
 bool
-CameraClass::setAutoGain(bool enabled, int sleepFor = 500)
+CameraClass::setAutoGain(bool enabled, int sleepFor)
 {
   sensor_t* sensor = esp_camera_sensor_get();
   if (sensor == nullptr) {
@@ -53,7 +53,7 @@ CameraClass::setAutoGain(bool enabled, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setAutoExposure(bool enabled, int sleepFor = 500)
+CameraClass::setAutoExposure(bool enabled, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -65,7 +65,7 @@ CameraClass::setAutoExposure(bool enabled, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setGain(int gain, int sleepFor = 500)
+CameraClass::setGain(int gain, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -78,7 +78,7 @@ CameraClass::setGain(int gain, int sleepFor = 500)
 }
 
 bool
-CameraClass::setExposure(int exp, int sleepFor = 500)
+CameraClass::setExposure(int exp, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -90,7 +90,7 @@ CameraClass::setExposure(int exp, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setVerticalFlip(bool flip, int sleepFor = 500)
+CameraClass::setVerticalFlip(bool flip, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -103,7 +103,7 @@ CameraClass::setVerticalFlip(bool flip, int sleepFor = 500)
 }
 
 bool
-CameraClass::setQuality(int quality, int sleepFor = 500)
+CameraClass::setQuality(int quality, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -115,7 +115,7 @@ CameraClass::setQuality(int quality, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setGainCeiling(int ceiling, int sleepFor = 500)
+CameraClass::setGainCeiling(int ceiling, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -154,7 +154,7 @@ CameraClass::setGainCeiling(int ceiling, int sleepFor = 500)
 }
 
 bool
-CameraClass::setBrightness(int brightness, int sleepFor = 500)
+CameraClass::setBrightness(int brightness, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -166,7 +166,7 @@ CameraClass::setBrightness(int brightness, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setLensCorrection(bool enabled, int sleepFor = 500)
+CameraClass::setLensCorrection(bool enabled, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -179,7 +179,7 @@ CameraClass::setLensCorrection(bool enabled, int sleepFor = 500)
 }
 
 bool
-CameraClass::setSaturation(int saturation, int sleepFor = 500)
+CameraClass::setSaturation(int saturation, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -191,7 +191,7 @@ CameraClass::setSaturation(int saturation, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setContrast(int contrast, int sleepFor = 500)
+CameraClass::setContrast(int contrast, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -204,7 +204,7 @@ CameraClass::setContrast(int contrast, int sleepFor = 500)
 }
 
 bool
-CameraClass::setSharpness(int sharpness, int sleepFor = 500)
+CameraClass::setSharpness(int sharpness, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -216,7 +216,7 @@ CameraClass::setSharpness(int sharpness, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setHorizontalFlip(bool enabled, int sleepFor = 500)
+CameraClass::setHorizontalFlip(bool enabled, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -229,7 +229,7 @@ CameraClass::setHorizontalFlip(bool enabled, int sleepFor = 500)
 }
 
 bool
-CameraClass::setBlackPixelCorrection(bool enabled, int sleepFor = 500)
+CameraClass::setBlackPixelCorrection(bool enabled, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
@@ -241,7 +241,7 @@ CameraClass::setBlackPixelCorrection(bool enabled, int sleepFor = 500)
   return true;
 }
 bool
-CameraClass::setWhitePixelCorrection(bool enabled, int sleepFor = 500)
+CameraClass::setWhitePixelCorrection(bool enabled, int sleepFor)
 {
   if (sensor == nullptr) {
     return false;
