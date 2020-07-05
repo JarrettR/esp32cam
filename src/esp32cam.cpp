@@ -40,26 +40,6 @@ CameraClass::changeResolution(const Resolution& resolution, int sleepFor)
 }
 
 bool
-CameraClass::changeResolution(const Resolution& resolution, int sleepFor)
-{
-  sensor_t* sensor = esp_camera_sensor_get();
-  if (sensor == nullptr) {
-    return false;
-  }
-
-  framesize_t frameSize = resolution.as<framesize_t>();
-  if (sensor->status.framesize == frameSize) {
-    return true;
-  }
-
-  if (sensor->set_framesize(sensor, frameSize) != 0) {
-    return false;
-  }
-  delay(sleepFor);
-  return true;
-}
-
-bool
 CameraClass::setAutoGain(bool enabled, int sleepFor = 500)
 {
   sensor_t* sensor = esp_camera_sensor_get();
