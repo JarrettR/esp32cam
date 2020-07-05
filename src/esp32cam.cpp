@@ -220,7 +220,7 @@ CameraClass::setSharpness(int sharpness, int sleepFor)
   if (sensor == nullptr) {
     return false;
   }
-  if (sensor->set_sharpness(sensor, sharpness != 0) {
+  if (sensor->set_sharpness(sensor, sharpness)) {
     return false;
   }
   delay(sleepFor);
