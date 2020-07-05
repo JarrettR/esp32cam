@@ -40,7 +40,7 @@ CameraClass::changeResolution(const Resolution& resolution, int sleepFor)
 }
 
 bool
-setFormatJpeg(int sleepFor = 500)
+CameraClass::setFormatJpeg(int sleepFor = 500)
 {
   sensor_t* sensor = esp_camera_sensor_get();
   if (sensor == nullptr) {
@@ -54,7 +54,7 @@ setFormatJpeg(int sleepFor = 500)
 }
 
 bool
-setFormatGrayscale(int sleepFor = 500)
+CameraClass::setFormatGrayscale(int sleepFor = 500)
 {
   sensor_t* sensor = esp_camera_sensor_get();
   if (sensor == nullptr) {
